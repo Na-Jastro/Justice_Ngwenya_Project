@@ -1,0 +1,453 @@
+﻿
+@{
+    ViewBag.Title = "User Information";
+}
+
+                                                                    @* User Componets *@
+
+<h2 style="color:black">User Details</h2>
+<div class="container">
+    <div class="col-lg-12">
+        <div class="col-lg-6" style="background-color:cadetblue">
+
+            <div class="col-lg-12" style="padding:15px">
+                <label>First Name</label>
+                <input type="text" class="form-control" id="txtFirst_Name" placeholder="First Name" onchange="myFirst_NameFunction(this.value)">
+            </div>
+
+            <div class="col-lg-12" style="padding:15px">
+                <label>Last Name</label>
+                <input type="text" class="form-control" id="txtLast_Name" placeholder="Last Name" onchange="myLast_NameFunction(this.value)">
+            </div>
+
+            <div class="col-lg-12" style="padding:15px">
+                <label>Age</label>
+                <input type="text" class="form-control" id="txtAge" placeholder="Age" onchange="myAgeFunction(this.value)">
+            </div>
+            <div class="col-lg-12">
+                <div>
+                    <input type="radio" id="txtFemale" name="gender" value="Female">
+                    <label>Female</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="txtMale" name="gender" value="Male">
+                    <label>Male</label>
+                </div>
+            </div>
+
+            <div class="col-lg-12" style="padding:15px">
+                <label>Date Of Birth</label>
+                <input type="date" id="txtDateOfBirth" class="form-control" placeholder="Date Of Birth" onchange="myDateOfBirthFunction(this.value)">
+            </div>
+
+            <div class="col-lg-12" style="padding:15px">
+                <label>Organization</label>
+                <input type="text" class="form-control" id="txtOrganization" placeholder="Organization" onchange="myOrganizationFunction(this.value)">
+            </div>
+
+            <div class="col-lg-12" style="padding:15px">
+                <label>Country</label>
+                <input type="text" class="form-control" id="txtCountry" placeholder="Country" onchange="myCountryFunction(this.value)">
+            </div>
+        </div>
+
+        <div class="col-lg-6" style="background-color:cadetblue">
+
+            <div class="col-lg-12" style="padding:15px">
+                <label>Province</label>
+                <select id="txtProvince" class="form-control">
+                    <option selected>Western Cape</option>
+                    <option>Gauteng</option>
+                    <option>Limpopo</option>
+                    <option>Eastern Cape</option>
+                    <option>Free State</option>
+                    <option>KwaZulu-Natal</option>
+                    <option>Mpumalanga</option>
+                    <option>North West</option>
+                    <option>Northern Cape</option>
+                </select>
+            </div>
+
+            <div class="col-lg-12" style="padding:15px">
+                <label>City</label>
+                <input type="text" class="form-control" id="txtCity" placeholder="City" onchange="myCityFunction(this.value)">
+            </div>
+
+            <div class="col-lg-12" style="padding:15px">
+                <label>Postal Code</label>
+                <input type="text" class="form-control" id="txtPostal_Code" placeholder="Postal_Code" onchange="myPostal_CodeFunction(this.value)">
+            </div>
+
+            <div class="col-lg-12" style="padding:15px">
+                <label>Phone Number</label>
+                <input type="text" class="form-control" id="txtPhone_Number" placeholder="Phone Number" onchange="myPhone_NumberFunction(this.value)">
+            </div>
+
+            <div class="col-lg-12" style="padding:15px">
+                <label>Address</label>
+                <textarea type="text" class="form-control" id="txtAddress" placeholder="Address" style="height:112.5px" onchange="myAddressFunction(this.value)">
+                </textarea>
+            </div>
+
+            <div class="col-lg-12" style="padding:15px">
+                <button type="button" id="btnCreate" class="btn btn-success">Insert</button>
+                <button type="button" id="btnUpdate" class="btn btn-warning">Update</button>
+                <button type="button" id="btnDelete" class="btn btn-danger">Delete</button>
+            </div>
+
+        </div>
+        <input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Index", "Home")'" />
+        @*@Html.ActionLink("Back", "Index", "Home")*@
+        @*<a href="javascript:document.getElementById('logoutForm').submit()">Logout</a>*@
+    </div>
+    <footer style="color:white">
+        <p>&copy; @DateTime.Now.Year - Justice Ngwenya Portfolio Project</p>
+    </footer>
+
+    @* Javascript  *@
+    @section Scripts{
+        <script type="text/javascript">
+//===============================================ONCHANGE EVENTS - START=====================================================================================
+
+            function myFirst_NameFunction(args)
+            {
+                var age = $('#txtFirst_Name').val().trim();
+                if (age != null)
+                {
+                    document.getElementById('txtFirst_Name').style.removeProperty('border');
+                }
+            }
+            function myLast_NameFunction(args) {
+                var age = $('#txtLast_Name').val().trim( );
+                if (age != null)
+                {
+                    document.getElementById('txtLast_Name').style.removeProperty('border');
+                }
+            }
+             function myDateOfBirthFunction(args) {
+                var age = $('#txtDateOfBirth').val().trim( );
+                if (age != null)
+                {
+                    document.getElementById('txtDateOfBirth').style.removeProperty('border');
+                }
+             }
+
+             function myOrganizationFunction(args) {
+                var age = $('#txtOrganization').val().trim( ) ;
+                if (age != null)
+                {
+                    document.getElementById('txtOrganization').style.removeProperty('border');
+                }
+            }
+            function myCountryFunction(args) {
+                var age = $('#txtCountry').val().trim( ) ;
+                if (age != null)
+                {
+                    document.getElementById('txtCountry').style.removeProperty('border');
+                }
+             }
+
+            function myCityFunction(args) {
+                var age = $('#txtCity').val().trim( ) ;
+                if (age != null)
+                {
+                    document.getElementById('txtCity').style.removeProperty('border');
+                }
+             }
+
+             function myPostal_CodeFunction(args) {
+                var age = $('#txtPostal_Code').val().trim( ) ;
+                if (age != null)
+                {
+                    document.getElementById('txtPostal_Code').style.removeProperty('border');
+                }
+             }
+             function myPhone_NumberFunction(args) {
+                var age = $('#txtPhone_Number').val().trim( ) ;
+                if (age != null)
+                {
+                    document.getElementById('txtPhone_Number').style.removeProperty('border');
+                }
+            }
+              function myAddressFunction(args) {
+                var age = $('#txtAddress').val().trim( ) ;
+                if (age != null)
+                {
+                    document.getElementById('txtAddress').style.removeProperty('border');
+                }
+             }
+
+            function myAgeFunction(args)
+            {
+                var age = $('#txtAge').val().trim( ) ;
+                if (age != null)
+                {
+                    document.getElementById('txtAge').style.removeProperty('border');
+                }
+            }
+//=============================================================END==========================================================================================
+
+//===============================================Load Information into text box  and view fields with values - START=====================================================================================
+
+                window.onload = function ()
+                {
+                    //debugger;
+                        var User =
+                        {
+                            userId : "@HttpContext.Current.User.Identity.Name"
+                        };
+                    $.ajax({
+                        url: "/UserInformation/GetUserInformationAsync",
+                        type: "POST",
+                        data:  '{userId: ' + JSON.stringify(User) + '}',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: "json",
+                        success: function (response)
+                        {
+                           debugger;
+                            var your_data = JSON.parse(response);
+
+                            if (your_data == "Failed")
+                            {
+                                document.getElementById("txtFirst_Name").style.borderColor = "red";
+                                document.getElementById("txtLast_Name").style.borderColor = "red";
+                                document.getElementById("txtAge").style.borderColor = "red";
+                                document.getElementById("txtDateOfBirth").style.borderColor = "red";
+                                document.getElementById("txtOrganization").style.borderColor = "red";
+                                document.getElementById("txtCountry").style.borderColor = "red";
+                                document.getElementById("txtProvince").style.borderColor = "red";
+                                document.getElementById("txtCity").style.borderColor = "red";
+                                document.getElementById("txtPostal_Code").style.borderColor = "red";
+                                document.getElementById("txtPhone_Number").style.borderColor = "red";
+                                document.getElementById("txtAddress").style.borderColor = "red";
+                            }
+                            else
+                            {
+                                var data = JSON.parse(your_data);
+                                if (data.Gender  == "Male")
+                                {
+                                    $("#txtMale").prop("checked", true);
+                                }
+                                else
+                                {
+                                    $("#txtFemale").prop("checked", true);
+                                }
+
+                                if (data.First_Name  == null) {
+                                    $('#txtFirst_Name').attr("placeholder", "PLEASE ENTER FIRST NAME");
+                                    document.getElementById("txtFirst_Name").style.borderColor = "red";
+                                }
+                                else {
+                                    $("#txtFirst_Name").val(data.First_Name) ;
+                                }
+
+                                if (data.Last_Name  == null) {
+                                    $('#txtLast_Name').attr("placeholder", "PLEASE ENTER LAST NAME");
+                                document.getElementById("txtLast_Name").style.borderColor = "red";
+                                }
+                                else
+                                {
+                                $("#txtLast_Name").val(data.Last_Name) ;
+                                }
+                                if (data.Age  == null)
+                                {
+                                    $('#txtAge').attr("placeholder", "PLEASE ENTER AGE");
+                                    document.getElementById("txtAge").style.borderColor = "red";
+                                }
+                                else
+                                {
+                                    $("#txtAge").val(data.Age) ;
+                                }
+                                if (data.Date_Of_Birth == null)
+                                {
+                                    $('#txtDateOfBirth').attr("placeholder", "PLEASE ENTER DATE OF BIRTH");
+                                    document.getElementById("txtDateOfBirth").style.borderColor = "red";
+                                }
+                                else
+                                {
+
+                                     $("#txtDateOfBirth").val(data.Date_Of_Birth);
+                                }
+                                if (data.Organization  == null)
+                                {
+                                    $('#txtOrganization').attr("placeholder", "PLEASE ENTER ORGANIZATION NAME");
+                                    document.getElementById("txtOrganization").style.borderColor = "red";
+                                }
+                                else {
+                                     $("#txtOrganization").val(data.Organization) ;
+                                }
+                                if (data.Country  == null)
+                                {
+                                    $('#txtCountry').attr("placeholder", "PLEASE ENTER COUNTRY");
+                                    document.getElementById("txtCountry").style.borderColor = "red";
+                                }
+                                else {
+                                   $("#txtCountry").val(data.Country) ;
+                                }
+                                if (data.Province  == null)
+                                {
+                                    document.getElementById("txtProvince").style.borderColor = "red";
+                                }
+                                else {
+                                    $("#txtProvince").val(data.Province) ;
+                                }
+                                if (data.City  == null)
+                                {
+                                    $('#txtCity').attr("placeholder", "PLEASE ENTER CITY");
+                                    document.getElementById("txtCity").style.borderColor = "red";
+                                }
+                                else {
+                                  $("#txtCity").val(data.City) ;
+                                }
+                                if (data.Postal_Code  == null)
+                                {
+                                    $('#txtPostal_Code').attr("placeholder", "PLEASE ENTER POSTAL CODE");
+                                    document.getElementById("txtPostal_Code").style.borderColor = "red";
+                                }
+                                else {
+                                       $("#txtPostal_Code").val(data.Postal_Code) ;
+                                }
+                                if (data.Phone_Number  == null)
+                                {
+                                    $('#txtPhone_Number').attr("placeholder", "PLEASE ENTER PHONE NUMBER");
+                                    document.getElementById("txtPhone_Number").style.borderColor = "red";
+                                }
+                                else {
+                                    $("#txtPhone_Number").val(data.Phone_Number) ;
+                                }
+                                if (data.Address  == null)
+                                {
+                                    $('#txtAddress').attr("placeholder", "PLEASE ENTER ADDRESS");
+                                    document.getElementById("txtAddress").style.borderColor = "red";
+                                }
+                                else {
+                                    $("#txtAddress").val(data.Address) ;
+                                }
+                                $("#btnCreate").attr("disabled", true);
+                                  alert("Success");
+                                }
+                        },
+                        error: function (xhr, status, error)
+                        {
+                            alert("Failed");
+                        }
+                    });
+                };
+//=============================================================END==========================================================================================
+
+            $(document).ready(function () {
+//===============================================Update User information - START=================================================================================
+
+                $("#btnUpdate").click(function (e)
+                {
+                    debugger;
+                     var MyUser =
+                        {
+                            ID: "",
+                            User_ID : "@HttpContext.Current.User.Identity.Name",
+                            First_Name: $('#txtFirst_Name').val() ,
+                            Last_Name: $('#txtLast_Name').val() ,
+                            Age: $('#txtAge').val() ,
+                            Date_Of_Birth: $('#txtDateOfBirth').val() ,
+                            Gender: $("input[name='gender']:checked").val() ,
+                            Email: "@HttpContext.Current.User.Identity.Name",
+                            Organization: $('#txtOrganization').val() ,
+                            Country: $('#txtCountry').val() ,
+                            Province: $('#txtProvince').val() ,
+                            City:  $('#txtCity').val() ,
+                            Postal_Code: $('#txtPostal_Code').val() ,
+                            Phone_Number: $('#txtPhone_Number').val() ,
+                            Address: $('#txtAddress').val()
+                        };
+
+                        $.ajax({
+                            url: "/UserInformation/UpdateUserInformationAsync",
+                            type: "POST",
+                            data: '{data: ' + JSON.stringify(MyUser) + '}',
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (response) {
+                                location.reload();
+                            },
+                            error: function (xhr, status, error) {
+                                alert("Failed");
+                                location.reload();
+                            }
+                        });
+                });
+//=============================================================END==========================================================================================
+
+//===============================================Delete User information=================================================================================
+
+                $("#btnDelete").click(function (e)
+                {
+                    var MyUser =
+                    {
+                        User_ID: "@HttpContext.Current.User.Identity.Name"
+                    }
+
+                     $.ajax({
+                            url: "/UserInformation/DeleteUserInformationAsync",
+                            type: "POST",
+                            data: '{data: ' + JSON.stringify(MyUser) + '}',
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (response) {
+                                location.reload();
+                            },
+                            error: function (xhr, status, error) {
+                                alert("Failed");
+                                location.reload();
+                            }
+                        });
+                });
+//=============================================================END==========================================================================================
+
+//===============================================Create User information - START =================================================================================
+
+                $("#btnCreate").click(function (e)
+                {
+                   // debugger;
+                        var MyUser =
+                        {
+                            ID: "",
+                            User_ID : "@HttpContext.Current.User.Identity.Name",
+                            First_Name: $('#txtFirst_Name').val() ,
+                            Last_Name: $('#txtLast_Name').val() ,
+                            Age: $('#txtAge').val() ,
+                            Date_Of_Birth: $('#txtDateOfBirth').val() ,
+                            Gender: $("input[name='gender']:checked").val() ,
+                            Email: "@HttpContext.Current.User.Identity.Name",
+                            Organization: $('#txtOrganization').val() ,
+                            Country: $('#txtCountry').val() ,
+                            Province: $('#txtProvince').val() ,
+                            City:  $('#txtCity').val() ,
+                            Postal_Code: $('#txtPostal_Code').val() ,
+                            Phone_Number: $('#txtPhone_Number').val() ,
+                            Address: $('#txtAddress').val()
+                        };
+
+                        $.ajax({
+                            url: "/UserInformation/UserInformationApplyAsync",
+                            type: "POST",
+                            data: '{data: ' + JSON.stringify(MyUser) + '}',
+                            contentType: "application/json; charset=utf-8",
+                            dataType: "json",
+                            success: function (response) {
+                                $("#btnCreate").attr("disabled", true);
+                                location.reload();
+                            },
+                            error: function (xhr, status, error) {
+                                alert("Failed");
+                            }
+                        });
+                    });
+            });
+//=============================================================END==========================================================================================
+        </script>
+    }
+</div>
+
+
+

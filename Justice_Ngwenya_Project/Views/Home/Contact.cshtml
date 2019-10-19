@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2 style="color:black">@ViewBag.Title</h2>
+
+<address style="color:gold; font-size:large">
+    <strong style="color:red">Address: </strong>202 Beverly Hills<br />
+    399 Jorissen Street<br />
+    Sunnyside, Pretoria<br />
+    <strong style="color:red">Phone No: </strong>067 796 7304<br />
+    <strong style="color:red">Email: </strong><a style="color:gold; font-size:large">ngwenyajustice24@gmail.com</a><br />
+</address>
+
+<input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Index", "Home")'" />
+<footer style="color:white">
+    <p>&copy; @DateTime.Now.Year - Justice Ngwenya Portfolio Project</p>
+</footer>

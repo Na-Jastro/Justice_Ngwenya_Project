@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2 style="color:black">Justice Ngwenya - Software Developer</h2>
+<h3>@ViewBag.Message</h3>
+
+<img src="~/Content/Justice.png" alt="Image" class="left" />
+<p style="color:gold; font-size:large">
+    <strong>
+        My name is Justice Ngwenya and I am a Software Developer. I develop websites and applications.
+        Most my experience lies in full stack development.
+
+        My expertise includes all development stages, from initial analysis through design and execution In addition to my technical skills,
+        I am a great communicator and team player. My ability to communicate well enables me to work effectively
+        with clients to identify objectives and requirements for applications.
+
+        I enjoy being challenged and engaging with projects that require me to work outside my comfort and knowledge set,
+        as continuing to learn new languages and development techniques are important to me and the success of your organization.
+    </strong>
+</p>
+<input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Index", "Home")'" />
+<footer style="color:white">
+    <p>&copy; @DateTime.Now.Year - Justice Ngwenya Portfolio Project</p>
+</footer>
+
+<style type="text/css">
+
+    .left {
+        display: block;
+        margin-right: auto;
+        width: 30%;
+        height: 300px;
+    }
+
+    img {
+        border-radius: 8px;
+    }
+</style>
+
+
+@*ngwenyajustice24@gmail.com    Contact: 067 796 7304  *@
