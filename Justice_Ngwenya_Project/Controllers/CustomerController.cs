@@ -25,7 +25,7 @@ namespace Justice_Ngwenya_Project.Controllers
         }
         //Get GetCustomerAsync 
         [HttpGet]
-        
+
         public async Task<ActionResult> GetCustomerAsync()
         {
             try
@@ -38,10 +38,12 @@ namespace Justice_Ngwenya_Project.Controllers
                 return Json(new { data = customerList }, JsonRequestBehavior.AllowGet);
             }
             catch (Exception ex)
-             {
+            {
                 throw ex;
             }
         }
+
     }
+   
 }
 

@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Browser market shares";
+}
+
+<script src="~/Scripts/chart/highcharts.js"></script>
+<script src="~/Scripts/chart/exporting.js"></script>
+
+<div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+<input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Index", "Home")'" />
+
+
+<script>
+
+    window.onload = function () {
+
+        $.getJSON("/Charts/GetDataAsync", function (data) {
+            debugger;
+            Highcharts.chart('container', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Earners Chart'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                            style: {
+                                 color: (Highcharts.theme && Highcharts.theme.colorTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Eaners',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'Low Earner',
+                        y: data.LowEarner
+                    }, {
+                        name: 'Middle Earner',
+                        y: data.MiddleEarner
+                    }, {
+                        name: 'High Earner',
+                        y: data.HighEarner
+                    }]
+                }]
+            });
+        });
+    }
+
+</script>

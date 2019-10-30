@@ -141,6 +141,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ChartsController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
@@ -202,7 +203,11 @@
     <Content Include="Justice_Ngwenya_Project_Model.edmx.diagram">
       <DependentUpon>Justice_Ngwenya_Project_Model.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\JusticeNgwenyaProject - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\chart\export-data.js" />
+    <Content Include="Scripts\chart\exporting.js" />
+    <Content Include="Scripts\chart\highcharts.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -234,6 +239,7 @@
     <Content Include="Views\User\VerifyAccount.cshtml" />
     <Content Include="Views\UserInformation\Index.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Charts\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
