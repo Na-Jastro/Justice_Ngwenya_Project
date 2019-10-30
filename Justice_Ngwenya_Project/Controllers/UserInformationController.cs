@@ -29,7 +29,7 @@ namespace Justice_Ngwenya_Project.Controllers
             string jsonData = js.Serialize(userId);
             var client = new HttpClient();
             var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync("https://localhost:44312/api/User/GetUserInformation", content);
+            HttpResponseMessage response = await client.PostAsync("https://justicengwenyaprojectapi.azurewebsites.net/api/User/GetUserInformation", content);
             var responseString = await response.Content.ReadAsStringAsync();
             return Json(responseString);
         }
@@ -43,7 +43,7 @@ namespace Justice_Ngwenya_Project.Controllers
             string jsonData = js.Serialize(data);
             var client = new HttpClient();
             var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync("https://localhost:44312/api/User/InsertUserInformation", content);
+            HttpResponseMessage response = await client.PostAsync("https://justicengwenyaprojectapi.azurewebsites.net/api/User/InsertUserInformation", content);
             var responseString = await response.Content.ReadAsStringAsync();
             return Json(responseString);
         }
@@ -57,7 +57,7 @@ namespace Justice_Ngwenya_Project.Controllers
             string jsonData = js.Serialize(data);
             var client = new HttpClient();
             var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync("https://localhost:44312/api/User/UpdateUserInformation", content);
+            HttpResponseMessage response = await client.PostAsync("https://justicengwenyaprojectapi.azurewebsites.net//api/User/UpdateUserInformation", content);
             var responseString = await response.Content.ReadAsStringAsync();
             return Json(responseString);
         }
@@ -70,7 +70,7 @@ namespace Justice_Ngwenya_Project.Controllers
             string jsonData = js.Serialize(data);
             var client = new HttpClient();
             var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync("https://localhost:44312/api/User/DeleteUserInformation", content);
+            HttpResponseMessage response = await client.PostAsync("https://justicengwenyaprojectapi.azurewebsites.net/api/User/DeleteUserInformation", content);
             var responseString = await response.Content.ReadAsStringAsync();
             return Json(responseString);
         }

@@ -31,7 +31,7 @@ namespace Justice_Ngwenya_Project.Controllers
             try
             {
                 var client = new HttpClient();
-                HttpResponseMessage response = await client.GetAsync("https://localhost:44312/api/Customer/CustomerInformation");
+                HttpResponseMessage response = await client.GetAsync("https://justicengwenyaprojectapi.azurewebsites.net/api/Customer/CustomerInformation");
                 string responseString = await response.Content.ReadAsStringAsync();
                 dynamic data = JsonConvert.DeserializeObject(responseString);
                 List<Customer> customerList = JsonConvert.DeserializeObject<List<Customer>>(responseString);
